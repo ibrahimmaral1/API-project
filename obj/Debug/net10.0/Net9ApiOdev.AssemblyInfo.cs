@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Net9ApiOdev")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93136c0712dbeb48d5201947d0d47e40192aec10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76aea7c62561db197000538af3a3b658f256cd41")]
 [assembly: System.Reflection.AssemblyProductAttribute("Net9ApiOdev")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Net9ApiOdev")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

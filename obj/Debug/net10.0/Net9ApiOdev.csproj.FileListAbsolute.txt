@@ -214,3 +214,4 @@ C:\Users\Maral\Net9ApiOdev\obj\Debug\net10.0\refint\Net9ApiOdev.dll
 C:\Users\Maral\Net9ApiOdev\obj\Debug\net10.0\Net9ApiOdev.pdb
 C:\Users\Maral\Net9ApiOdev\obj\Debug\net10.0\Net9ApiOdev.genruntimeconfig.cache
 C:\Users\Maral\Net9ApiOdev\obj\Debug\net10.0\ref\Net9ApiOdev.dll
+C:\Users\Maral\Net9ApiOdev\obj\Debug\net10.0\Net9ApiOdev.sourcelink.json

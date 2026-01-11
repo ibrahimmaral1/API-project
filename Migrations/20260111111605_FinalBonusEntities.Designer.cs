@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net9ApiOdev.Data;
 
@@ -10,9 +11,11 @@ using Net9ApiOdev.Data;
 namespace Net9ApiOdev.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260111111605_FinalBonusEntities")]
+    partial class FinalBonusEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.0");
@@ -138,12 +141,12 @@ namespace Net9ApiOdev.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2026, 1, 11, 11, 16, 4, 994, DateTimeKind.Utc).AddTicks(9227),
                             Email = "admin@odev.com",
                             IsDeleted = false,
                             PasswordHash = "AQAAAAIAAYagAAAAEL...",
                             Role = "Admin",
-                            UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedAt = new DateTime(2026, 1, 11, 11, 16, 4, 994, DateTimeKind.Utc).AddTicks(9421),
                             Username = "admin"
                         });
                 });
