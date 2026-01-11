@@ -173,23 +173,28 @@ usersApi.MapGet("/{id}", async (int id, IUserService userService) =>
 usersApi.MapPost("/", async (
     UserCreateDTO userDto, 
     IUserService userService,
-    IValidator<UserCreateDTO> validator // <-- YENİ: Validator'ı parametre olarak ekledik
+    IValidator<UserCreateDTO> validator 
 ) =>
 {
-    // Artık 'app.Services' kullanmaya gerek yok, doğrudan 'validator' parametresini kullanıyoruz
+    // 1. Validasyon Kontrolü [cite: 28]
     var validationResult = validator.Validate(userDto);
     
     if (!validationResult.IsValid)
     {
+        // Standart Error Response formatı [cite: 25, 30]
         return Results.BadRequest(ApiResponse<object>.ErrorResponse("Giriş verileri geçerli değil.")); 
     }
     
+   // 2. Kullanıcı Oluşturma İşlemi [cite: 10, 12]
     var createdUser = await userService.CreateUserAsync(userDto);
 
+    // 3. Başarılı Yanıt ve 201 Created Status Code [cite: 24, 33]
     return Results.Created($"/users/{createdUser.Id}", 
                            ApiResponse<UserResponseDTO>.SuccessResponse(createdUser, "Kullanıcı başarıyla oluşturuldu.")); 
 })
-.Produces<ApiResponse<UserResponseDTO>>(StatusCodes.Status201Created);
+.AllowAnonymous() // <-- KRİTİK: Giriş yapmadan (Token olmadan) ilk kayda izin verir kanka.
+.Produces<ApiResponse<UserResponseDTO>>(StatusCodes.Status201Created)
+.Produces(StatusCodes.Status400BadRequest);
 
 // 4. PUT: Kullanıcı Güncelle
 usersApi.MapPut("/{id}", async (int id, UserUpdateDTO userDto, IUserService userService) =>
